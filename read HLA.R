@@ -8,14 +8,14 @@
 #                                             #
 ###############################################
 
-
+# HERE IS A TEST CHANGE to update the data file name
 
 setwd("C:/Users/dmdickso/IDEA")
 path="C:/Users/dmdickso/IDEA/"
 ###### change the above path once if needed to fit the current location of datafiles   ########
 
 
-hlafile="287 IDEA HLA.csv"
+hlafile="UVM_GATES_CHALLENGE_HLA.csv"
 pathhla<-paste0(path,hlafile, collapse='')
 
 library(tidyr)
@@ -124,7 +124,7 @@ HLA_DRB3<-flipandsum2(hla, hla$drb31, hla$drb32)
 HLA_DRB4<-flipandsum2(hla, hla$drb41, hla$drb42)
 HLA_DRB5<-flipandsum2(hla, hla$drb51, hla$drb52)
 
-# merge all separate HLA-type dataframesthen remove individuals
+# merge all separate HLA-type dataframes then remove individuals
 HLAcomplete<-Reduce(function(x,y) merge(x,y, by="subject"), list(HLA_A,HLA_B, HLA_C, HLA_DPB1, HLA_DQA1, HLA_DQB1, HLA_DRB1, HLA_DRB3, HLA_DRB4, HLA_DRB5))
 rm(HLA_A, HLA_B, HLA_C,HLA_DPB1, HLA_DRB1, HLA_DQA1, HLA_DQB1, HLA_DRB3,HLA_DRB4, HLA_DRB5)
 
